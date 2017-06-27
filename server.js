@@ -14,7 +14,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+//serve static default content
 app.use(express.static("./public"));
+
+//passing our express routes the express function
+require("./models/articleSchema")(app);
 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
