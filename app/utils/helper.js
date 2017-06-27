@@ -8,17 +8,15 @@ var helper = {
 	// getDem function returns 
 	getDem: function() {
 		return axios.get("https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey=" + APIKey
-			
-		).then(function(response) {
+			).then(function(response) {
 			console.log("CNN results", response.data.articles);
 			return response.data.articles;
 		});
-	}
+	},
 
 	getRep: function() {
 		return axios.get("https://newsapi.org/v1/articles?source=breitbart-news&sortBy=top&apiKey=" + APIKey
-			
-		).then(function(response) {
+			).then(function(response) {
 			console.log("Breitbart results", response.data.articles);
 			return response.data.articles;
 		});
@@ -30,7 +28,7 @@ var helper = {
 			console.log("axios results", response.data._id);
 			return response.data._id;
 		});
-	},
+	}
 
 }
 

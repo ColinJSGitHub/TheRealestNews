@@ -14,7 +14,7 @@ var Liberal = React.createClass({
   	console.log("clicked");
   	console.log(chosenArticle);
 
-  	helper.postArticle(//chosenArticle.data).then(function() {
+  	helper.postArticle(chosenArticle).then(function() {
   		console.log("article saved!");
   	});
   },
