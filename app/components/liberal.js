@@ -7,7 +7,7 @@ var helper = require("../utils/helper");
 var Liberal = React.createClass({
 
   getInitialState: function() {
-    return { demArticles: "" };
+    return { demArticles: [] };
   },
 
   handleClick: function(chosenArticle) {
@@ -23,15 +23,48 @@ var Liberal = React.createClass({
   componentDidMount: function() {
     helper.getDem().then(function(articleData) {
       this.setState({ demArticles: articleData});
-      {console.log("CNN Results", articleData)}
+      console.log("CNN Results", articleData);
     }.bind(this));
   },
 
-  render: function() {
-
+  articles: function() {
   	return this.state.demArticles.map(function(article, index) {
+  		console.log(article.title);
+  		
+		    // {/*div key = {index} refers to the mapped index position of repArticles */}
+	     //    <div>
+	     //      <li className="list-group-item">
+	     //        <h3>
+	     //          <span>
+	     //          	{/*article.title is pulling the index object (in this case an article from the array of 10 articles), then the title value. Em is italicized, b is bold */}
+	     //            <b>{article.title}</b>
+	     //          </span>
+	     //        </h3>
+	     //    	{/*pulls the image source from the article in question; remember JSX uses className, not class. className newsImage is the css class we will use for styling */}
+	     //        <img src={article.urlToImage} alt="News Image" className="newsImage"/>
+	     //        <h4>
+	     //        	<span>
+	     //        		<em>{article.description}</em>
+	     //        	</span>
+	     //        </h4>
 
-	  	return (
+	     //        <span className="btn-group pull-right">
+	     //            <a href={article.url} rel="noopener noreferrer" target="_blank">
+	     //              <button className="btn btn-default ">View Article</button>
+	     //            </a>
+	     //        	{/* saves articles to database */}
+	     //            <button className="btn btn-primary" onClick={() => this.handleClick(article)}>Save</button>
+	     //          </span>
+	     //        <p>Author: {article.author} </p>
+	     //        <p>Date Published: {article.publishedAt}</p>
+	     //      </li>
+	     //    </div>
+  		
+  	}.bind(this));
+  },
+
+  container: function() {
+		return (
 	  		<div className="main-container">
 		        <div className="row">
 		          <div className="col-lg-12">
@@ -44,33 +77,18 @@ var Liberal = React.createClass({
 		              </div>
 		              <div className="panel-body">
 		                <ul className="list-group">
-					        <div key={index}>
-					          <li className="list-group-item">
-					            <h3>
-					              <span>
-					                <b>{article.title}</b>
-					              </span>
-					            </h3>
-					            <img src={article.urlToImage} alt="News Image" className="newsImage"/>
-					            <span className="btn-group pull-right">
-					                <a href={article.url} rel="noopener noreferrer" target="_blank">
-					                  <button className="btn btn-default ">View Article</button>
-					                </a>
-					            	{/*saves articles to database */}
-					                <button className="btn btn-primary" onClick={() => this.handleClick(article)}>Save</button>
-					              </span>
-					            <p>Author: {article.author} </p>
-					            <p>Date Published: {article.publishedAt}</p>
-					          </li>
-					        </div>
+		                	{this.articles()}
 		                </ul>
 		              </div>
 		            </div>
 		          </div>
 		        </div>
 	     	</div>
-	  	);
-	});
+  		);
+	},
+
+  render: function() {
+  	return this.container();
   }
 
 });
