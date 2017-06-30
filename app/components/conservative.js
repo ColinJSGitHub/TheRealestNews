@@ -31,7 +31,6 @@ var Conservative = React.createClass({
   render: function() {
   	var articles = this.state.repArticles.map(function(article, index) {
   		return(
-		    {/*div key = {index} refers to the mapped index position of repArticles */}
 	        <div>
 	          <li className="list-group-item">
 	            <h3>

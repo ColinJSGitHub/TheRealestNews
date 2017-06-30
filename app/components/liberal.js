@@ -30,7 +30,6 @@ var Liberal = React.createClass({
   render: function() {
   	var articles = this.state.demArticles.map(function(article, index) {
   		return(
-		    {/*div key = {index} refers to the mapped index position of repArticles */}
 	        <div>
 	          <li className="list-group-item">
 	            <h3>
@@ -80,7 +79,7 @@ var Liberal = React.createClass({
 		            </div>
 		          </div>
 		        </div>
-	     	</div>
+	    	</div>
   		);
   }
 

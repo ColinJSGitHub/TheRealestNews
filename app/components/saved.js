@@ -7,7 +7,7 @@ var helper = require("../utils/helper");
 var Saved = React.createClass({
 
 	getInitialState: function() {
-		return {savedArticles: ""};
+		return {savedArticles: []};
 	},
 
 	componentDidMount: function() {
@@ -94,10 +94,9 @@ var Saved = React.createClass({
 		//if we dont have any articles saved call our render empty function
 		if(!this.state.savedArticles){
 			return this.renderEmpty();
-		}else{
-			//otherwise render our saved articles
-			return this.renderArticles();
 		}
+		//otherwise render our saved articles
+		return this.renderArticles();
 	}
 });
 
