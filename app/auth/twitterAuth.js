@@ -2,6 +2,7 @@ var express = require('express');
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
 var router = express.Router();
+var User = require('../../models/userSchema');
 
 
 // // This will be  to save a session --> not needed now
@@ -28,15 +29,32 @@ passport.use(new TwitterStrategy({
     
     function(accessToken, refreshToken, profile, done) {
 
-        console.log(accessToken);
-        console.log(refreshToken);
-        console.log(profile);
-        console.log(done);
+        User.findOne({ id: profile.id }, function(err, user) {
+            if(err) {
+                console.log(err);  // handle errors!
+            }
+            if (!err && user !== null) {
+                done(null, user);
+            } else {
+                user = new User({
+                    id: profile.id,
+                    token: accessToken,
+                    displayName: profile.displayName,
+                    username: profile.username
+                });
+                user.save(function(err) {
+                    if(err) {
+                        console.log(err);  // handle errors!
+                    } else {
+                        console.log("saving user ...");
+                        done(null, user);
+                    }
+                    
+                });
+            }
+        });
 
-        console.log("successfully auth'd a user!");
-
-        done(null, profile);
-
+        console.log("successfully saved a user!");
 
 
     }

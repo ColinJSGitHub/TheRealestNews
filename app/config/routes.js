@@ -19,11 +19,16 @@ var browserHistory = router.browserHistory;
 // Reference the high-level components
 var Main = require("../components/main");
 var Saved = require("../components/saved");
+var Auth = require("../components/auth")
 
 module.exports = (
     // High level component is the Router component.
     <Router history={browserHistory}>
-        <Route path="/" component={Main}>
+
+    	<Route path="/" component={Auth} />
+
+
+        <Route path="main" component={Main}>
             <Route path="saved" component={Saved} />
             <IndexRoute component={Main} />
         </Route>

@@ -2,6 +2,7 @@ var express = require('express');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var router = express.Router();
+var FBUser = require('../../models/facebookUserSchema');
 
 
 // // This will be  to save a session --> not needed now
@@ -28,16 +29,39 @@ passport.use(new FacebookStrategy({
     
     function(accessToken, refreshToken, profile, done) {
 
-        console.log(accessToken);
-        console.log(refreshToken);
-        console.log(profile);
-        console.log(done);
+        FBUser.findOne({ id: profile.id }, function(err, user) {
+            if(err) {
+                console.log(err);  // handle errors!
+            }
+            if (!err && user !== null) {
+                done(null, user);
+            } else {
+                user = new FBUser({
+                    id: profile.id,
+                    token: accessToken,
+                    displayName: profile.displayName,
+                    username: profile.username
+                });
+                user.save(function(err) {
+                    if(err) {
+                        console.log(err);  // handle errors!
+                    } else {
+                        console.log("saving user ...");
+                        done(null, user);
+                    }
+                    
+                });
+            }
+        });
 
-        console.log("successfully auth'd a FACEBOOK user!");
-
-        done(null, profile);
+        console.log("successfully saved a user!");
 
 
 
     }
 ));
+
+
+module.exports = router;
+
+
