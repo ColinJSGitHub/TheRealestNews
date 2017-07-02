@@ -1,23 +1,11 @@
-// Include React as a dependency
 var React = require("react");
-// Including the Link component from React Router to navigate within our application without full page reloads
 var Link = require("react-router").Link;
 
-var Nav = require("./nav");
-
-var Liberal = require("./liberal");
-var Conservative = require("./conservative");
-
-// Create the Main component
-var Main = React.createClass({
-
-  render: function() {
-
-    return (
-
-      <div className="main-container">
-        <div className="container">
-          {/* Navbar */}
+var Nav = React.createClass({
+	render: function(){
+		return(
+       
+          
           <nav className="navbar navbar-default" role="navigation">
             <div className="container-fluid">
               <div className="navbar-header">
@@ -42,23 +30,8 @@ var Main = React.createClass({
               </div>
             </div>
           </nav>
-
-          {/*calling our children components */}
-          <Conservative />
-          <Liberal />
-
-          <footer>
-            <hr />
-            <p className="pull-right">
-              <i className="fa fa-github" aria-hidden="true"></i>
-              Proudly built using React.js
-            </p>
-          </footer>
-        </div>
-      </div>
-    );
-  }
+		);
+	}
 });
 
-// Export the component to routes
-module.exports = Main;
+module.exports = Nav;

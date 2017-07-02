@@ -51,6 +51,13 @@ var helper = {
 			console.log("deleted results", results);
 			return results;
 		});
+	},
+
+	getFacebookLogin: function(){
+		return axios.post('/auth/facebook').then(function(results){
+			console.log("FB being hit sucka: ", results);
+			return results;
+		});
 	}
 
 };

@@ -8,7 +8,7 @@ var schemaOptions = {
     collection: "users"
 };
 
-var User = new mongoose.Schema({
+var FBUser = new mongoose.Schema({
 
     id           : String,
     token        : String,
@@ -17,4 +17,4 @@ var User = new mongoose.Schema({
 
 }, schemaOptions);
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('FBUser', FBUser);
