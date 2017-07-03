@@ -58,29 +58,29 @@ var Liberal = React.createClass({
 	          </li>
 	        </div>
 	      )
-  		});
+  	}.bind(this));
 
-  		return (
-	  		<div className="main-container">
-		        <div className="row">
-		          <div className="col-lg-12">
-		            <div className="panel panel-primary">
-		              <div className="panel-heading">
-		                <h1 className="panel-title">
-		                  <strong>
-		                    <i className="fa fa-newspaper-o" aria-hidden="true"></i> Liberal News</strong>
-		                </h1>
-		              </div>
-		              <div className="panel-body">
-		                <ul className="list-group">
-		                	{articles}
-		                </ul>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-	    	</div>
-  		);
+	return (
+		<div className="main-container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="panel panel-primary">
+              <div className="panel-heading">
+                <h1 className="panel-title">
+                  <strong>
+                    <i className="fa fa-newspaper-o" aria-hidden="true"></i> Liberal News</strong>
+                </h1>
+              </div>
+              <div className="panel-body">
+                <ul className="list-group">
+                	{articles}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+	</div>
+	);
   }
 
 });

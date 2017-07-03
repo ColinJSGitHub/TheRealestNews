@@ -32,7 +32,7 @@ var Main = React.createClass({
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <Link className="navbar-brand" to="/">The Realest News</Link>
+                <Link className="navbar-brand" to="/main">The Realest News</Link>
               </div>
 
               <div className="collapse navbar-collapse navbar-ex1-collapse">
@@ -43,7 +43,7 @@ var Main = React.createClass({
             </div>
           </nav>
 
-          {/*calling our children components */}
+          {/*calling our child components */}
           <Conservative />
           <Liberal />
 

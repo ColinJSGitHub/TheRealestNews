@@ -16,27 +16,30 @@ var Auth = React.createClass({
 
 	render: function(){
 		return (
-
-			
-
 			<div>
 				<Nav />
-				<h3 className="textAlign">To see DA NEWS from shitty political sites, we need you to login first</h3>
+				<div className="main-container">
+					<div className="row">
+						<div className="col-lg-12 text-center">
+							<h3 className="textAlign">To gain wisdom and become enlightened login with Facebook or Twitter</h3>
 
-				<form method="POST" action="/auth/twitter">
-			    	<div className="social-wrap c">
-						<button className="twitter btnSocial">Twitter</button>
+							<form method="POST" action="/auth/twitter">
+						    	<div className="social-wrap c">
+									<button className="twitter btnSocial">Twitter</button>
+								</div>
+
+							</form>
+
+							<form method="POST" action="/auth/facebook">
+
+								<div className="social-wrap c">
+									<button className="facebook btnSocial">Facebook</button>
+								</div>
+
+							</form>
+						</div>
 					</div>
-
-				</form>
-
-				<form method="POST" action="/auth/facebook">
-
-					<div className="social-wrap c">
-						<button className="facebook btnSocial">Facebook</button>
-					</div>
-
-				</form>
+				</div>
 			</div>
 		);
 	}
