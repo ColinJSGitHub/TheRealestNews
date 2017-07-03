@@ -28,9 +28,10 @@ module.exports = (
     	<Route path="/" component={Auth} />
 
 
-        <Route path="main" component={Main}>
-            <Route path="saved" component={Saved} />
-            <IndexRoute component={Main} />
+        <Route path="/main" component={Main}>
+        	<IndexRoute component={Main} />
         </Route>
+        
+        <Route path="/saved" component={Saved} />
     </Router>
 );

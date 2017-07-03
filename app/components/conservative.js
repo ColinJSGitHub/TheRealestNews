@@ -59,7 +59,7 @@ var Conservative = React.createClass({
 	          </li>
 	        </div>
 	      )
-  		});
+  		}.bind(this));
 
   		return (
 	  		<div className="main-container">
