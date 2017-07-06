@@ -25,15 +25,15 @@ var helper = {
 	postArticle: function(article) {
 		var newArticle = {title: article.title, image: article.urlToImage, description: article.description, url: article.url, author: article.auther, date: article.publishedAt};
 		return axios.post("/api/saved", newArticle).then(function(response) {
-			console.log("axios results", response.data._id);
-			return response.data._id;
+			console.log("axios results", response.data);
+			return response.data;
 		});
 	},
 	//get saved articles from the db
 	getSaved: function() {
 		return axios.get("/api/saved").then(function(results){
-			console.log("saved articles", results);
-			return results;
+			console.log("saved articles", results.data);
+			return results.data;
 		});
 	},
 	//function that deletes saved articles
