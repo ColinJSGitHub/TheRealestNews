@@ -23,10 +23,15 @@ var helper = {
 	},
 	//this function saves articles to the db
 	postArticle: function(article) {
-		var newArticle = {title: article.title, image: article.urlToImage, description: article.description, url: article.url, author: article.auther, date: article.publishedAt};
-		return axios.post("/api/saved", newArticle).then(function(response) {
-			console.log("axios results", response.data);
+		console.log('postArticle has been hitTTTT');
+		console.log(article);
+		var newArticle = {title: article.title, image: article.urlToImage, description: article.description, url: article.url, author: article.author, date: article.publishedAt};
+		console.log(newArticle);
+		return axios.post("/api/saved", newArticle)
+		.then(function(response) {
+			// console.log("axios results", response.data);
 			return response.data;
+
 		});
 	},
 	//get saved articles from the db

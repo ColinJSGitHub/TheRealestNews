@@ -36,6 +36,9 @@ app.use(passport.session());
 var authRouter = require('./app/auth/auth');
 app.use('/auth', authRouter);
 
+var apiRouter = require('./controller/expressRoutes');
+app.use('/api', apiRouter);
+
 
 // Will make sure user is Auth'd before seeing other routes
 app.use(function (req, res, next) {
@@ -64,7 +67,6 @@ db.once("open", function() {
 app.get("*", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
-
 
 
 app.listen(PORT, function() {
