@@ -44,15 +44,22 @@ var Main = React.createClass({
           </nav>
 
           {/*calling our child components */}
-          <Conservative />
-          <Liberal />
+
+          <div className="row">
+            <div className="col-xs-6">
+              <Liberal />
+            </div>
+            <div className="col-xs-6">
+              <Conservative />
+              
+            </div>
+          </div>
 
           <footer>
             <hr />
-            <p className="pull-right">
-              <i className="fa fa-github" aria-hidden="true"></i>
-              Proudly built using React.js
-            </p>
+            <div className="container">
+             <strong>Copyright &copy; 2017 The Realest News andsegeg12313</strong>
+           </div>
           </footer>
         </div>
       </div>

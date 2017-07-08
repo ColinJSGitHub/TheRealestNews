@@ -39,7 +39,9 @@ var Liberal = React.createClass({
 	              </span>
 	            </h3>
 	        	{/*pulls the image source from the article in question; remember JSX uses className, not class. className newsImage is the css class we will use for styling */}
-	            <img src={article.urlToImage} alt="News Image" className="newsImage"/>
+            <div className='newsPicDiv'> 
+	            <img src={article.urlToImage} alt="News Image" className="newsImage text-center"/>
+            </div>  
 	            <h4>
 	            	<span>
 	            		<em>{article.description}</em>
@@ -65,13 +67,13 @@ var Liberal = React.createClass({
         <div className="row">
           <div className="col-lg-12">
             <div className="panel panel-primary">
-              <div className="panel-heading">
+              <div className="panel-heading libHead">
                 <h1 className="panel-title">
                   <strong>
                     <i className="fa fa-newspaper-o" aria-hidden="true"></i> Liberal News</strong>
                 </h1>
               </div>
-              <div className="panel-body">
+              <div className="panel-body libGroup">
                 <ul className="list-group">
                 	{articles}
                 </ul>
