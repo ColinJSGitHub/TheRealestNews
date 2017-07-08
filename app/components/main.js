@@ -64,7 +64,7 @@ var Main = React.createClass({
           <footer>
             <hr />
             <div className="container">
-             <strong>Copyright &copy; 2017 The Realest News</strong>
+             <strong>Copyright &copy; 2017 The Realest News1</strong>
            </div>
           </footer>
         </div>
