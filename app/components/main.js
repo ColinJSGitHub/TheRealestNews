@@ -43,6 +43,12 @@ var Main = React.createClass({
             </div>
           </nav>
 
+          <div className="row">
+            <div className="col-xs-12">
+              <img src={require("../../public/images/trn.png")} alt="The Realest News" className="trn"/>
+            </div>
+          </div>
+
           {/*calling our child components */}
 
           <div className="row">
@@ -58,7 +64,7 @@ var Main = React.createClass({
           <footer>
             <hr />
             <div className="container">
-             <strong>Copyright &copy; 2017 The Realest News andsegeg12313</strong>
+             <strong>Copyright &copy; 2017 The Realest News</strong>
            </div>
           </footer>
         </div>
