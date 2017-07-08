@@ -22,7 +22,6 @@ router.get('/twitter/callback',
         function(req, res) {
 
 
-
         console.log('/twitter/callback' +  " has been hit!!");
         // Successful authentication, redirect home.
         res.redirect('/main');
