@@ -50,8 +50,8 @@ app.use(function (req, res, next) {
 
 });
 
-var serverUrl = process.env.URL || 'mongodb://localhost/TheRealestNews';
-mongoose.connect(serverUrl)
+// var serverUrl = process.env.URL || 'mongodb://localhost/TheRealestNews';
+// mongoose.connect(serverUrl)
 
 // mongoose.connect("mongodb://localhost/TheRealestNews");
 mongoose.connect("mongodb://andrew:andrew123@ds153392.mlab.com:53392/trn");
