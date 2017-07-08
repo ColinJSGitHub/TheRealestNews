@@ -22,7 +22,7 @@ passport.deserializeUser (function (obj, cb) {
 passport.use(new FacebookStrategy({
     clientID: '569234186798622',
     clientSecret: '96fb9653327d8e5e3fc4396f8921c8af',
-    callbackURL: "https://upper-moose-86468.herokuapp.com/auth/facebook/callback"
+    callbackURL: "http://localhost:3000/auth/facebook/callback"
   },
     // This takes the info sent back from twitter
     // If user does not exist in DB, it creates a new user
